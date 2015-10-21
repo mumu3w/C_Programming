@@ -15,7 +15,8 @@
 		
   邮箱：mumu3w@outlook.com	
   
-  时间：10/18/2015 
+  时间：10/18/2015
+		10/19/2015
   
 ******************************************************************************/
 
@@ -28,9 +29,12 @@ int main(){
 	scanf("%d/%d/%d", &mm, &dd, &yy);
 	printf("Enter second date (mm/dd/yy): ");
 	scanf("%d/%d/%d", &mm1, &dd1, &yy1);
-	
+	/*
 	date = yy * 365 + mm * 12 + dd;
 	date1 = yy1 * 365 + mm1 * 12 + dd1;
+	*/
+	date = yy * 365 + mm * 31 + dd;
+	date1 = yy1 * 365 + mm1 * 31 + dd1;
 	
 	if(date < date1){
 		printf("%d/%d/%.2d is earlier than %d/%d/%.2d", mm, dd, yy, mm1, dd1, yy1);
