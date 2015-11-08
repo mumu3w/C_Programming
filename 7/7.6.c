@@ -1,7 +1,13 @@
 ﻿/******************************************************************************
   题目: 显示C语言基本类型的大小。
 		
-  演示: 
+  演示: sizeof(char): 1Byte
+		sizeof(short): 2Byte
+		sizeof(int): 4Byte
+		sizeof(long): 4Byte
+		sizeof(float): 4Byte
+		sizeof(double): 8Byte
+		sizeof(long double): 16Byte
 		
   邮箱：mumu3w@outlook.com	
   
