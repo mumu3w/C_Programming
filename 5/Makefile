@@ -1,52 +1,43 @@
-﻿CC		= gcc
+CC		= cl 
+CFLAGS	= /nologo /Zi /Za /MTd /Od /TC
 
-CFLAGS	= -Werror -ansi -g -c
-LDFLAGS	= -g -static
+all : 1 2 3 4 5 6 7 8 9 10 11
 
+1 : 5.1.c
+	$(CC) $(CFLAGS) /Fe$@ $?
+	
+2 : 5.2.c
+	$(CC) $(CFLAGS) /Fe$@ $?
+	
+3 : 5.3.c
+	$(CC) $(CFLAGS) /Fe$@ $?
+	
+4 : 5.4.c
+	$(CC) $(CFLAGS) /Fe$@ $?
+	
+5 : 5.5.c
+	$(CC) $(CFLAGS) /Fe$@ $?
+	
+6 : 5.6.c
+	$(CC) $(CFLAGS) /Fe$@ $?
+	
+7 : 5.7.c
+	$(CC) $(CFLAGS) /Fe$@ $?
+	
+8 : 5.8.c
+	$(CC) $(CFLAGS) /Fe$@ $?
 
-.PHONY: all clean
-
-all: 1 2 3 4 5 6 7 8 9 10 11
-
-1: 5.1.o
-	$(CC) $(LDFLAGS) -o $@ $<
-
-2: 5.2.o
-	$(CC) $(LDFLAGS) -o $@ $<
+9 : 5.9.c
+	$(CC) $(CFLAGS) /Fe$@ $?
 	
-3: 5.3.o
-	$(CC) $(LDFLAGS) -o $@ $<
+10 : 5.10.c
+	$(CC) $(CFLAGS) /Fe$@ $?
 	
-4: 5.4.o
-	$(CC) $(LDFLAGS) -o $@ $<
+11 : 5.11.c
+	$(CC) $(CFLAGS) /Fe$@ $?
 	
-5: 5.5.o
-	$(CC) $(LDFLAGS) -o $@ $<
-	
-6: 5.6.o
-	$(CC) $(LDFLAGS) -o $@ $<
-	
-7: 5.7.o
-	$(CC) $(LDFLAGS) -o $@ $<
-	
-8: 5.8.o
-	$(CC) $(LDFLAGS) -o $@ $<
-	
-9: 5.9.o
-	$(CC) $(LDFLAGS) -o $@ $<
-	
-10: 5.10.o
-	$(CC) $(LDFLAGS) -o $@ $<
-	
-11: 5.11.o
-	$(CC) $(LDFLAGS) -o $@ $<
-	
-%o:%c
-	$(CC) $(CFLAGS) $<
-
-clean:
-	-del *.o 
-#	-del *.a 
-#	-del *.dll
-	-del *.exe 
-#	-del *.def
+clean : 
+	-del *.ilk
+	-del *.obj
+	-del *.pdb
+	-del *.exe
