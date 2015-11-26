@@ -1,0 +1,76 @@
+/******************************************************************************
+   演示打开文件与关闭文件。
+
+   (C) Nov 22 2015  Mumu3w@outlook.com
+
+******************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define FILE_NAME "demo1.dat"
+
+int main(void){
+	FILE *fp;
+	
+	if((fp = fopen(FILE_NAME, "r")) == NULL){
+		fprintf(stderr, "Can't open %s\n", FILE_NAME);
+		exit(EXIT_FAILURE);
+	}
+	
+	fclose(fp);
+	return 0;
+}/******************************************************************************
+   演示为一个已经打开的流附加文件。
+
+   (C) Nov 22 2015  Mumu3w@outlook.com
+
+******************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+#define FILE_NAME "demo2.dat"
+#define STDERR_NAME "stderr.out"
+
+int main(void){
+	FILE *fp;
+	
+	if(freopen(STDERR_NAME, "w", stderr) == NULL){
+		fprintf(stdin, "%s can't be opened\n", FILE_NAME);
+	}
+	
+	if((fp = fopen(FILE_NAME, "r")) == NULL){
+		fprintf(stderr, "Can't open %s\n", FILE_NAME);
+		exit(EXIT_FAILURE);
+	}
+	
+	fclose(fp);
+	return 0;
+}/******************************************************************************
+   演示由命令行给出文件名，检测文件是否可以打开。
+
+   (C) Nov 22 2015  Mumu3w@outlook.com
+
+******************************************************************************/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[]){
+	FILE *fp;
+	
+	if(argc != 2){
+		fprintf(stderr, "usage: canopen filename\n");
+		exit(EXIT_FAILURE);
+	}
+	
+	if((fp = fopen(argv[1], "r")) == NULL){
+		fprintf(stderr, "%s can't be opened\n", argv[1]);
+		exit(EXIT_FAILURE);
+	}
+	
+	fprintf(stderr, "%s can be opened\n", argv[1]);
+	fclose(fp);
+	return 0;
+}
