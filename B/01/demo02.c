@@ -9,11 +9,16 @@
 
 ******************************************************************************/
 #include <stdio.h>
+#include "myc.h"
 
+#define BUFFER 512
 
 int main(void){
+	char buffer[BUFFER+1];
 	
-	printf("Hello, World!\n");
+	printf("Input string: ");
+	read_line(buffer, BUFFER, stdin);
+	printf("%s\n", buffer);
 	
 	return 0;
 }

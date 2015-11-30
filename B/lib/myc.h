@@ -10,7 +10,7 @@ typedef int BOOL;
 #endif
 
 extern void Error(const char *format, ...);
-extern int read_line(char buffer[], int n, FILE **in_fp);
+extern int read_line(char buffer[], int n, FILE *in_fp);
 
 
 #endif
