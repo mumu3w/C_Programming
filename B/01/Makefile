@@ -4,7 +4,7 @@ LDFLAGS	= -L../lib -lmyc
 
 RM		= -rm -fr
 
-AOUT	= demo01
+AOUT	= demo01 demo02
 
 
 
@@ -12,7 +12,10 @@ AOUT	= demo01
 all : $(AOUT)
 
 demo01 : demo01.c
-	$(CC) $(CFLAGS) -o $@ demo01.c $(LDFLAGS)
+	$(CC) $(CFLAGS) -o $@ $< $(LDFLAGS)
+	
+demo02 : demo02.c
+	$(CC) $(CFLAGS) -o $@ $< $(LDFLAGS)
 	
 	
 clean :
