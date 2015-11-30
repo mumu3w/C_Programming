@@ -11,13 +11,13 @@
 #include <stdio.h>
 #include "myc.h"
 
-#define BUFFER 512
+#define BUFFER_MAX 512
 
 int main(void){
-	char buffer[BUFFER+1];
+	char buffer[BUFFER_MAX+1];
 	
 	printf("Input string: ");
-	read_line(buffer, BUFFER, stdin);
+	read_line(buffer, BUFFER_MAX, stdin);
 	printf("%s\n", buffer);
 	
 	return 0;
